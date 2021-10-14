@@ -12,7 +12,7 @@ html {
 }
 
 /* resets font size to be 62.5% of the user preference - 
-   in most browser configurations this will be 10px */
+in most browser configurations this will be 10px */
 :root {
   font-size: 62.5%
 }
@@ -25,17 +25,83 @@ body {
   margin: 0;
 }
 
-#fullName {
-  background-color: rgb(223, 135, 5);
+main {
+  width: 300px;
+  background-color: white;
+  font-size: 18px;
+  text-align: center;
 }
 
-main {
-  width: 320px;
-  background-color: white;
-  font-size: 20px;
-  text-align: center;
+h1 {
+  font-size: 30px;
+  padding: auto;
+}
+
+#occupation {
+  background-color: lightgray;
+  padding: auto;
+}
+
+#offer {
+  padding: auto;
+}
+
+#contact {
+  display: flex;
+}
+
+#contact > p {
+  height: 60px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact > p:first-child {
+  background-color: orange;
+}
+
+#contact > p:last-child {
+  background-color:orangered;
+}
+
+#brand {
+  display: none;
 }
 
 img {
   border-radius: 50%;
 }
+
+h1, p {
+  margin: 0;
+}
+
+@media only screen and (min-width: 600px) {
+  main {
+    display: grid;
+    text-align: left;
+    width: 550px;
+    grid-template-columns: 40% 60%;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas: 
+    "status name"
+    "img occupation"
+    "img brand" 
+    "contact offer";
+  }
+  
+  #brand {
+    display: inline;
+  }
+  
+  img {
+    grid-area: img;
+    margin: auto;
+  }
+  
+  #brand > p {
+    padding: 0 20px 0 10px;
+    font-size: 1.6rem;
+  }
